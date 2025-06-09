@@ -1,0 +1,105 @@
+@mixin button($background-color: #e50914) {
+     margin-right: 1px;
+     padding: 15px;
+     color: #f0ebeb;
+     font-size: 18px;
+     background-color: $background-color;
+     border: none;
+     border-radius: 3px;
+     cursor: pointer;
+     transition: transform 0.1s, box-shadow 0.1s;
+     box-shadow: 0 5px 0 darken($background-color, 15%);
+     position: relative;
+
+     &:active {
+          transform: translateY(4px);
+          box-shadow: 0 1px 0 darken($background-color, 15%);
+     }
+}
+
+.hero {
+     background-image: linear-gradient(
+               to right,
+               rgb(0, 0, 0) 0%,
+               rgba(0, 0, 0, 0.473) 50%,
+               rgba(0, 0, 0, 0) 100%
+          ),
+          url('/dist/images/FundoOnePieceSerie.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     height: 100vh;
+     .header {
+          padding: 1.2vh 5.6vw;
+          max-width: 100%;
+          background-color: rgb(0, 0, 0);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &__logo {
+               max-width: 250px;
+
+               img {
+                    width: 200px;
+               }
+          }
+
+          &__links {
+               display: flex;
+               gap: 20px;
+
+               &__link {
+                    list-style: none;
+
+                    a {
+                         text-decoration: none;
+                         color: #f0ebeb;
+                         font-size: 18px;
+                         font-weight: bold;
+                    }
+               }
+          }
+     }
+
+     &__content {
+          padding: 10% 5.6vw;
+
+          &__branding {
+               img {
+                    width: 650px;
+                    margin-left: -1%;
+               }
+          }
+
+          &__info {
+               margin-top: -3%;
+               color: #f0ebeb;
+               font-size: 20px;
+               margin-bottom: 10px;
+
+               #box-red {
+                    background-color: #d50813;
+                    border-radius: 3px;
+                    padding: 3px;
+               }
+          }
+
+          &__text {
+               color: #f0ebeb;
+               width: 630px;
+               text-align: justify;
+               font-size: 20px;
+               margin-bottom: 30px;
+          }
+
+          &__buttons {
+               button:first-child {
+                    @include button(#d50813);
+               }
+
+               button:last-child {
+                    @include button(#055593);
+               }
+          }
+     }
+}

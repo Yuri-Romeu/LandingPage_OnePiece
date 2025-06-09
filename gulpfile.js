@@ -24,7 +24,7 @@ function images() {
 
 function html() {
      return gulp
-          .src('./src/*.html')
+          .src('./*.html')
           .pipe(htmlmin({ collapseWhitespace: true }))
           .pipe(gulp.dest('./dist/'));
 }
@@ -34,5 +34,5 @@ exports.default = gulp.parallel(styles, images, scripts, html);
 exports.watch = function () {
      gulp.watch('./src/styles/*.scss', gulp.parallel(styles));
      gulp.watch('./src/scripts/*.js', gulp.parallel(scripts));
-     gulp.watch('./src/*.html', gulp.parallel(html));
+     gulp.watch('./*.html', gulp.parallel(html));
 };
