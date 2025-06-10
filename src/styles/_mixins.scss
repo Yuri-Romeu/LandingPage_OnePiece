@@ -1,0 +1,20 @@
+@use 'sass:color';
+
+@mixin button($background-color: #e50914) {
+     margin-right: 1px;
+     padding: 15px;
+     color: #f0ebed;
+     font-size: 18px;
+     background-color: $background-color;
+     border: none;
+     border-radius: 3px;
+     cursor: pointer;
+     transition: transform 0.1s, box-shadow 0.1s;
+     box-shadow: 0 5px 0 color.adjust($background-color, $lightness: -15%);
+     position: relative;
+
+     &:active {
+          transform: translateY(4px);
+          box-shadow: 0 1px 0 color.adjust($background-color, $lightness: -15%);
+     }
+}

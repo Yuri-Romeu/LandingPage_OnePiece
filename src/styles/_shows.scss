@@ -1,4 +1,12 @@
+@use 'variaveis';
+
 .shows {
+     padding: 2vw 5.6vw;
+     min-height: 50vw;
+     height: 100vh;
+     background-color: #000000;
+     position: relative;
+
      &__title {
           margin-top: 15px;
           color: #f0ebeb;
@@ -8,12 +16,6 @@
           font-size: 38px;
           text-align: center;
      }
-
-     padding: 2vw 5.6vw;
-     min-height: 50vw;
-     height: 100vh;
-     background-color: #000000;
-
      &__list {
           margin-top: 44px;
           display: none;
@@ -33,6 +35,7 @@
                height: 202px;
                overflow: hidden;
                position: relative;
+               z-index: 1;
                img {
                     width: 100%;
                     height: 100%;
@@ -55,7 +58,8 @@
           }
 
           &__button {
-               color: #f0ebeb;
+               z-index: 1;
+               color: variaveis.$colorWhite;
                font-size: 20px;
                border: none;
                padding-bottom: 5px;
@@ -67,12 +71,34 @@
                border-bottom: 5px solid transparent;
 
                &--is--active {
-                    border-color: #f0ebeb;
+                    border-color: variaveis.$colorWhite;
                }
 
                @media (max-width: 768px) {
                     font-size: 16px;
                }
+          }
+     }
+
+     &__gif {
+          position: absolute;
+          bottom: 0;
+          left: 60%;
+          z-index: 0;
+
+          img {
+               height: 350px;
+          }
+     }
+
+     &__gif--2 {
+          position: absolute;
+          top: 43px;
+          left: 45%;
+          z-index: 0;
+
+          img {
+               height: 150px;
           }
      }
 }
